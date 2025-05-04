@@ -27,7 +27,7 @@ for r in range(ROWS):
 
 print("Board cards:", BOARD_CARDS)
 print(len(BOARD_CARDS), "cards in the deck.")
-class SequenceGame:
+class MultiQuenceGame:
     def __init__(self, num_players=2, board_layout=None):
         # split board layout into 10×10 grid
         self.boards = {
@@ -104,11 +104,11 @@ class SequenceGame:
         self.current = (self.current + 1) % len(self.players)
 
 
-class SequenceGUI:
+class MultiQuenceGUI:
     def __init__(self, root, num_players=2):
         self.root = root
-        self.root.title("Dual Sequence")
-        self.game = SequenceGame(num_players, board_layout=grid)
+        self.root.title("MultiQuence")
+        self.game = MultiQuenceGame(num_players, board_layout=grid)
         self.selected = None
         self.last_btn = None
 
@@ -264,5 +264,5 @@ class SequenceGUI:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    SequenceGUI(root, num_players=2)
+    MultiQuenceGUI(root, num_players=2)
     root.mainloop()
